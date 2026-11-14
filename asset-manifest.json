@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/balkon-71/static/css/main.95bba2c2.css",
-    "main.js": "/balkon-71/static/js/main.ecde96f8.js",
+    "main.js": "/balkon-71/static/js/main.2b8ffcc4.js",
     "static/media/63.jpg": "/balkon-71/static/media/63.135d2e8d1afc0bceebba.jpg",
     "static/media/60.jpg": "/balkon-71/static/media/60.b644def11b44d9650824.jpg",
     "static/media/42.jpg": "/balkon-71/static/media/42.f5d5edb3783607771c60.jpg",
@@ -69,10 +69,10 @@
     "static/media/5.jpg": "/balkon-71/static/media/5.6a1cced388ff2f9d2ab7.jpg",
     "index.html": "/balkon-71/index.html",
     "main.95bba2c2.css.map": "/balkon-71/static/css/main.95bba2c2.css.map",
-    "main.ecde96f8.js.map": "/balkon-71/static/js/main.ecde96f8.js.map"
+    "main.2b8ffcc4.js.map": "/balkon-71/static/js/main.2b8ffcc4.js.map"
   },
   "entrypoints": [
     "static/css/main.95bba2c2.css",
-    "static/js/main.ecde96f8.js"
+    "static/js/main.2b8ffcc4.js"
   ]
 }
