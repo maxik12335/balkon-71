@@ -7,24 +7,51 @@ import { useState } from 'react'
 import Burger from '../UI/Burger/Burger'
 import vk from '../../assets/navbar/vk.png'
 import mail from '../../assets/navbar/mail.png'
+import { useNavColor } from "../../utils/navbar";
+import mainFon from '../../assets/main/1.png'
+import Btn from '../UI/Btn/Btn'
+import Form from '../Form/Form'
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenForm, setIsOpenForm] = useState(false)
+  const { navColor, textColor } = useNavColor()
 
+
+      const handleSubmit = async (data) => {
+      // Сюда только логика отправки, без стейтов формы
+      console.log('Отправляем:', data);
+    };
   return (
     <div>
 
-      <div className={classes.burgerBox}>
-        <p className="text-base">Балкон 71</p>
+      <div className={classes.burgerBox} >
+        <p className="text-base" style={{ color: textColor }}>Балкон 71</p>
         <Burger onClick={() => setIsOpen(true)} />
       </div>
 
       {isOpen && 
         <Modal onClick={() => setIsOpen(null)}>
+          <img className={classes.imgFon} src={mainFon} alt="" />
           <div className={classes.mobyleMenu}>
             <div className={classes.header}>
-              <p className="h3">Балкон 71</p>
-              <Close onClick={() => setIsOpen(null)} />
+              <p className="text-base">Балкон 71</p>
+              <Close onClick={() => setIsOpen(null)} style={{ position: 'relative', right: '0', top: '0'}} spanColor={'white'}/>
+            </div>
+
+            <div className={classes.texts}>
+              <p className='h3'>Ремонт</p>
+              <p className='h3'>Остекление</p>
+              <p className='h3'>Мебель</p>
+              <Btn onClick={() => setIsOpenForm(true)}>оставить заявку</Btn>
+
+              {isOpenForm &&
+                <Modal>
+                  <Close onClick={() => setIsOpenForm(false)}/>
+
+                  <Form onSubmit={handleSubmit} close={() => setIsOpenForm(false)}/>
+                </Modal>
+              }
             </div>
 
             <div className={classes.footer}>

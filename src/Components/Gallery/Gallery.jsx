@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal';
 import Close from '../UI/Close/Close';
 import FormBtn from '../UI/FormBtn/FormBtn';
 
-const Gallery = ({images, initialCount = 12, step = 12}) => {
+const Gallery = ({images, initialCount = 6, step = 12}) => {
   const [visibleCount, setVisibleCount] = useState(initialCount);
   const [isOpen, setIsOpen] = useState(null);
 
@@ -13,7 +13,7 @@ const Gallery = ({images, initialCount = 12, step = 12}) => {
 
   return (
     <>
-      <ul className={classes.list}>
+      <ul className={classes.list} data-nav-text="#f7f7f7">
         {visibleImages.map((item, i) => (
           <li className={classes.item} key={i}>
             <img

@@ -17,15 +17,11 @@ const SectionForm = () => {
     <div className={`${classes.section} section line-dark`}>
       <div className={`${classes.container} container`}>
         <div className={classes.content}>
-
-        <h3 className='h3'>
-          Нужно остекление дома, дачи квартиры, ремонт балкона, лоджии или мебель под заказ ?
-        </h3>
         <p className='text-base'>
           можете позвонить сами по номеру <a className={`${classes.tel} text-sm hover`} href="tel:+74872791790">+ 7 487 279 17 90</a> или оставить заявку и вам позвонят в ближайшее время
         </p>
 
-        <Btn>оставить заявку</Btn>
+        <Btn onClick={() => setIsOpen(true)}>оставить заявку</Btn>
 
           {isOpen &&
           <Modal>

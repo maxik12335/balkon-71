@@ -1,21 +1,22 @@
 import classes from "./Navbar.module.css"
 import MobileMenu from "../MobileMenu/MobileMenu";
+import { useNavColor } from "../../utils/navbar";
 
 import vk from '../../assets/navbar/vk.png'
 import mail from '../../assets/navbar/mail.png'
 
 
 const Navbar = () => {
-  
+   const { navColor, textColor } = useNavColor()
   return (
    <div className={`${classes.navbar} line-dark`}>
       <div className="container-navbar">
 
         <div className={classes.desctopMenu}>
-          <p className="text-base">Балкон 71</p>
+          <p className="text-base" style={{ color: textColor }}>Балкон 71</p>
 
           <div className={classes.right}>
-            <a className="text-sm hover" href="tel:+74872791790">+ 7 487 279 17 90</a>
+            <a className="text-sm hover" href="tel:+74872791790" style={{ color: textColor }}>+ 7 487 279 17 90</a>
             <div className={classes.media}>
               <a className={`${classes.link} hover`} href="https://vk.com/balkon_tula71" target="_blank">
                 <img className={classes.img} src={vk} alt="vk" />

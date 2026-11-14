@@ -3,7 +3,7 @@ import classes from './Job.module.css'
 const Job = () => {
 
   return (
-    <div className={`${classes.section} section line-dark`}>
+    <div className={`${classes.section} section line-dark`} data-nav-text="#f7f7f7">
       <div className={`${classes.container} container-navbar`}>
         <div className="content">
           <h2 className='h2'>Как мы работаем</h2>

@@ -22,7 +22,7 @@ const About = () => {
   };
 
   return (
-    <div className={`${classes.section} section line-dark`}>
+    <div className={`${classes.section} section line-dark`} data-nav-text="#1A1A1A">
       <div className={`${classes.container} container`}>
         <div className="content">
           <div className={classes.header}>
@@ -61,7 +61,7 @@ const About = () => {
           </div>
 
           <p className="text-base">
-            Мы делаем всё, чтобы ваш балкон стал уютным, комфортным и функциональным пространством! «Балкон Тула» — ваш балкон в надёжных руках!
+            Мы делаем всё, чтобы ваш балкон стал уютным, комфортным и функциональным пространством! <span className={classes.green}>«Балкон Тула»</span> — ваш балкон в надёжных руках!
           </p>
         </div>
       </div>

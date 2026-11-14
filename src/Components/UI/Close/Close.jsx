@@ -1,10 +1,10 @@
 import classes from './Close.module.css'
 
-const Close = ({...props}) => {
+const Close = ({spanColor, ...props}) => {
   return (
     <div className={classes.close} {...props}>
-      <span ></span>
-      <span ></span>
+      <span style={{background: spanColor}}></span>
+      <span style={{background: spanColor}}></span>
     </div>
   )
 }

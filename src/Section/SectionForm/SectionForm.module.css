@@ -3,6 +3,7 @@
 }
 
 .content {
+  width: 50%;
   display: grid;
   gap: var(--space-4);
 }
@@ -15,7 +16,11 @@
   
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+  }
+}
 
 /* телефон */
 @media (max-width: 576px) {

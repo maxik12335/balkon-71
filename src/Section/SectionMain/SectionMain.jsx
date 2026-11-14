@@ -16,15 +16,18 @@ const SectionMain = () => {
   };
 
   return (
-    <div className={`${classes.section} section line-dark`}>
+    <div className={`${classes.section} section line-dark`} data-nav-text="#f7f7f7">
       <div className="container">
         <img className={classes.imgFon} src={img} />
         <div className={`${classes.content}`}>
-          <h2 className='h1 line-dark-text'>Ремонт балконов и лоджий остекление в Туле</h2>
+          <div className={classes.texts}>
+            <h2 className='h1 line-dark-text'>Ремонт </h2>
+            <p className='text-base'>балконов и лоджий остекление в Туле</p>
+          </div>
 
           <div className={classes.footer}>
-            <p className='text-sm'>через 5-10 минут</p>
               <Btn onClick={() => setIsOpen(true)}>позвоним</Btn>
+              <p className='text-sm'>5-10 минут</p>
             </div>
         </div>
 

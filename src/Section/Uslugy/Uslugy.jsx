@@ -5,7 +5,7 @@ import VideoHero from '../../Components/VideoHero/VideoHero'
 const Uslugy = () => {
 
   return (
-    <div className={`${classes.section} section line-dark`}>
+    <div className={`${classes.section} section line-dark`} data-nav-text="#1A1A1A">
       {/* <VideoHero /> */}
       <div className="container">
         <div className="content">
@@ -25,8 +25,8 @@ const Uslugy = () => {
             </li>
           </ul>
           <div className={classes.text}>
-            <p className='text-base'>делаем работу за <span className='bold'>2 дня</span> и даем <span className='bold'>1 год</span> гарантию на наши работы</p>
-            <p className='text-base'>опытные мастера с десятилетним стажем. И уже помогли более <span className='bold'>1000 людям</span> отремонтировать и остеклить балкон</p>
+            <p className='text-base'>делаем работу за <span className={`${classes.bold}`}>2 дня</span> и даем <span className={`${classes.bold}`}>1 год</span> гарантию</p>
+            <p className='text-base'>мастера с 10-им стажем. Помогли более <span className={`${classes.bold}`}>1000 людям</span> создать уютный балкон</p>
           </div>
         </div>
       </div>

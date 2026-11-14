@@ -1,35 +1,29 @@
 import { useEffect, useState } from "react";
 
-// useNavColor() - Navbar в цвет фона
-    // переменные:
-        // :root {lightBg | lightText | darkBg | darkText}
-          // *** нужны переменные именно в :root
-        // class: .section--dark
-          // *** добавить класс на родительский блок, где нужна темная тема
+// useNavColor() — navbar перекрашивается вручную через атрибуты на секциях
+//
+// 1. Дефолт (при загрузке) — константы ниже:
+const NAV_DEFAULT_BG = "#ffffff";   // фон navbar'а при загрузке
+const NAV_DEFAULT_TEXT = "white"; // цвет текста при загрузке
+//
+// 2. На любой блок вешаешь атрибут — это цвет navbar'а, когда он над блоком:
+//    <section data-nav-text="#fff">                     — поменять ТОЛЬКО цвет текста
+//    <section data-nav-bg="#14532d">                    — поменять ТОЛЬКО фон
+//    <section data-nav-bg="#000" data-nav-text="#fff">  — оба
+//    Атрибутов нет — navbar сохраняет предыдущее значение. Хоть bg, хоть текст, хоть оба.
+//
+// 3. В Navbar.jsx:
+//    const { navColor, textColor } = useNavColor();
+//    <div style={{ backgroundColor: navColor }}>   ← фон
+//    <p  style={{ color: textColor }}>             ← текст
 
-    // в Navbar.jsx вставить
-        // 1. style={{color: textColor}} в текст
-        // 2. style={{ backgroundColor: navColor }} в фон
+const NAV_LINE = 60; // условная линия navbar'а от верха экрана
 
 export const useNavColor = () => {
-  // Сначала пустые значения, заполним их в useEffect
-  const [navColor, setNavColor] = useState("");
-  const [textColor, setTextColor] = useState("");
+  const [navColor, setNavColor] = useState(NAV_DEFAULT_BG);
+  const [textColor, setTextColor] = useState(NAV_DEFAULT_TEXT);
 
   useEffect(() => {
-    const root = document.documentElement;
-    const g = (name) => getComputedStyle(root).getPropertyValue(name).trim();
-
-    // Читаем переменные один раз при монтировании
-    const lightBg = g("--color-background");
-    const lightText = g("--color-text");
-    const darkBg = g("--color-background-dark");
-    const darkText = g("--color-text-dark");
-
-    // Сразу ставим светлый режим как дефолт (чтобы не было прозрачного навбара)
-    setNavColor(lightBg);
-    setTextColor(lightText);
-
     let ticking = false;
 
     const handleScroll = () => {
@@ -37,32 +31,25 @@ export const useNavColor = () => {
       ticking = true;
 
       requestAnimationFrame(() => {
-        const darkBlocks = document.querySelectorAll(".section--dark");
-        let isCurrentlyOnDark = false;
-
-        darkBlocks.forEach((block) => {
-          const rect = block.getBoundingClientRect();
-
-          // Логика: верх блока ниже низа навбара И низ блока выше начала экрана
-          if (rect.top <= 60 && rect.bottom >= 60) {
-            isCurrentlyOnDark = true;
+        document.querySelectorAll("[data-nav-bg], [data-nav-text]").forEach((el) => {
+          const r = el.getBoundingClientRect();
+          if (r.top <= NAV_LINE && r.bottom >= NAV_LINE) {
+            if (el.dataset.navBg) setNavColor(el.dataset.navBg);
+            if (el.dataset.navText) setTextColor(el.dataset.navText);
           }
         });
-
-        if (isCurrentlyOnDark) {
-          setNavColor(darkBg);
-          setTextColor(darkText);
-        } else {
-          setNavColor(lightBg);
-          setTextColor(lightText);
-        }
 
         ticking = false;
       });
     };
 
+    handleScroll(); // если страница открыта не с самого верха
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return { navColor, textColor };

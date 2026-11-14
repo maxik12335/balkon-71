@@ -31,13 +31,27 @@
   border-radius: var(--radius-sm);
   box-shadow: 0 0px 8px 0px #3287474f;
   padding: var(--space-4) var(--space-4);
+  transition: var(--transition-base);
+}
+
+.itemUslugy:hover {
+  background-color: #328747;
+  color: var(--color-background);
+}
+
+.itemUslugy:hover p {
+  color: white;
 }
 
 .list,
 .listUslugy {
   position: relative;
   z-index: 1;
-  /* color: white; */
+}
+
+.bold {
+  font-weight: 600;
+  color: #328747;
 }
 
 /* планшет */
