@@ -5,6 +5,8 @@ import { NAV_LINKS } from '../../data/links'
 import classes from './MobileMenu.module.css'
 import { useState } from 'react'
 import Burger from '../UI/Burger/Burger'
+import vk from '../../assets/navbar/vk.png'
+import mail from '../../assets/navbar/mail.png'
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +15,7 @@ const MobileMenu = () => {
     <div>
 
       <div className={classes.burgerBox}>
-        <p className="text-base">clear web</p>
+        <p className="text-base">Балкон 71</p>
         <Burger onClick={() => setIsOpen(true)} />
       </div>
 
@@ -21,21 +23,20 @@ const MobileMenu = () => {
         <Modal onClick={() => setIsOpen(null)}>
           <div className={classes.mobyleMenu}>
             <div className={classes.header}>
-              <p className="h3">clear web</p>
+              <p className="h3">Балкон 71</p>
               <Close onClick={() => setIsOpen(null)} />
             </div>
 
-            <nav className={classes.menu}>
-              {NAV_LINKS.map(link => (
-                <NavLink key={link.to} className={`${classes.link} text-base`} to={link.to} onClick={() => setIsOpen(null)}>
-                  {link.label}
-                </NavLink>
-              ))}
-            </nav>
-
             <div className={classes.footer}>
-              <a className="text-sm hover" href="" target="_blank">max</a>
-              <a className="text-sm hover" href="https://vk.ru/maximkuznetsov2015" target="_blank">vk</a>
+              <a className="text-sm hover" href="tel:+74872791790">+ 7 487 279 17 90</a>
+              <div className={classes.media}>
+                <a className={`${classes.link} hover`} href="https://vk.com/balkon_tula71" target="_blank">
+                  <img className={classes.img} src={vk} alt="vk" />
+                </a>
+                <a className={`${classes.link} hover`} href="mailto:balkon_tula71@mail.ru" target="_blank">
+                  <img className={classes.img} src={mail} alt="mail" />
+                </a>
+              </div>
             </div>
           </div>
         </Modal>

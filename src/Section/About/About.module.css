@@ -1,0 +1,63 @@
+.header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.header span {
+  color: #328747;
+}
+
+.texts {
+  display: grid;
+  gap: var(--space-4);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0px 8px 0px #3287474f;
+  padding: var(--space-4) var(--space-4);
+}
+
+.texts h3 {
+  color: #328747;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.list {
+  display: grid;
+  border-radius: var(--radius-sm);
+  gap: var(--space-1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+@media (max-width: 992px) {
+  .texts {
+    gap: var(--space-8);
+  }
+
+  .list {
+    gap: var(--space-5);
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-0);
+  }
+
+  .bold  {
+    color: #328747;
+  }
+}
+
+@media (max-width: 768px) {}
+
+/* телефон */
+@media (max-width: 576px) {
+
+}

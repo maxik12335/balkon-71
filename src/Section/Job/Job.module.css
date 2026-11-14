@@ -1,0 +1,48 @@
+.section {
+  background-color: #328747;
+  color: var(--color-background);
+}
+
+.container {
+  padding: 100px 20px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.item:not(:last-child) {
+  padding-right: 20%;
+  border-right: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+/* планшет */
+@media (max-width: 992px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item:not(:last-child) {
+    border-right: 1px solid transparent;
+  }
+}
+
+@media (max-width: 768px) {}
+
+/* телефон */
+@media (max-width: 576px) {
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-2);
+  }
+  .item:not(:last-child) {
+    padding-right: 0;
+  }
+}

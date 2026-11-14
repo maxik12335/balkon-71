@@ -1,0 +1,58 @@
+.section {
+  position: relative;
+}
+
+.title {
+  text-align: left;
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  display: grid;
+}
+
+.listUslugy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.listUslugy p {
+  color: #328747;
+}
+
+.itemUslugy {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0px 8px 0px #3287474f;
+  padding: var(--space-4) var(--space-4);
+}
+
+.list,
+.listUslugy {
+  position: relative;
+  z-index: 1;
+  /* color: white; */
+}
+
+/* планшет */
+@media (max-width: 992px) {
+  .listUslugy {
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {}
+
+/* телефон */
+@media (max-width: 576px) {
+  .text {
+    gap: var(--space-2);
+  }
+}

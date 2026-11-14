@@ -1,0 +1,51 @@
+.section {
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.imgBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.imgFon {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.5);
+  object-fit: cover;
+}
+
+.img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+.footer {
+  margin-top: var(--space-8);
+  display: grid;
+  gap: var(--space-2);
+}
+
+/* планшет */
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+/* телефон */
+@media (max-width: 576px) {
+  .footer {
+    margin-top: var(--space-4);
+  }
+}

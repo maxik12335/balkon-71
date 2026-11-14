@@ -1,0 +1,53 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+
+.item {
+  height: 250px;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: var(--transition-base);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0px 8px 0px #3287474f;
+}
+
+.img:hover {
+  filter: brightness(1);
+}
+
+.modalImg {
+  flex: 1;
+  min-height: 0;
+  max-height: 80%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0px 8px 0px #3287474f;
+}
+
+/* планшет */
+@media (max-width: 992px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* телефон */
+@media (max-width: 576px) {
+
+}

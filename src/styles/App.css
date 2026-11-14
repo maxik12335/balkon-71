@@ -1,4 +1,4 @@
-@import './base/rest.css';
 @import './base/tokens.css';
+@import './base/rest.css';
 @import './base/typography.css';
 @import './base/globals.css';

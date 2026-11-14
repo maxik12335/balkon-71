@@ -1,0 +1,23 @@
+.section {
+  position: relative;
+}
+
+.content {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.tel {
+  color: #328747;
+}
+
+@media (max-width: 992px) {
+  
+}
+
+@media (max-width: 768px) {}
+
+/* телефон */
+@media (max-width: 576px) {
+
+}
