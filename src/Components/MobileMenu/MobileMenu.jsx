@@ -43,7 +43,7 @@ const MobileMenu = () => {
               <p className='h3'>Ремонт</p>
               <p className='h3'>Остекление</p>
               <p className='h3'>Мебель</p>
-              <Btn onClick={() => setIsOpenForm(true)}>оставить заявку</Btn>
+              <Btn onClick={() => setIsOpenForm(true)} style={{marginTop: '30px'}}>оставить заявку</Btn>
 
               {isOpenForm &&
                 <Modal>
